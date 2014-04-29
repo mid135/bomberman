@@ -15,6 +15,9 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    arena.h \
+    elements.h \
+    coordinator.h
 
 FORMS    += mainwindow.ui
