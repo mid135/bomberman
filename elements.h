@@ -4,13 +4,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
+#include <QObject>
 using namespace std;
 
-class Element {
+class Element: public virtual QObject {
+Q_OBJECT
 public:
     Element();
-    void draw(size_t);
-    bool move(size_t);//функция движения, принимает направление
+    virtual void draw(size_t) = 0;
     size_t get_x() {return x_;}
     size_t get_y() {return y_;}
     size_t get_hight() {return hight_;}
@@ -19,6 +20,7 @@ public:
     float get_speed() {return speed_;}
     float get_acceleration() {return acceleration_;}
     bool move(size_t,size_t);//принимает на сколько он должен сдвинуться и куда
+
 protected:
     void set_x(size_t x) { x_ = x;}
     void set_y(size_t y) { y_ = y;;}
@@ -36,11 +38,11 @@ private:
     float acceleration_;
     size_t direction_;
     void purge();//эта функция должна удалить рисовку объекта
-    void timer();//эта функция по идее должна обрабатывать собыите перехлода на следующий квант времени
+
 };
 
 
-
+/*
 class Bomb:Element {
 private:
     size_t liveTime;
@@ -57,9 +59,18 @@ private:
 
 class Explosion:Element {
 public:
-    Explosion(size_t liveTime) {liveTime_ = liveTime;};
+    Explosion(size_t liveTime) {liveTime_ = liveTime;}
 private:
     size_t liveTime_;
+};
+*/
+class Player:public Element {
+    Q_OBJECT
+public:
+    Player();
+    string name;
+public slots:
+    virtual void timer() = 0;//эта функция по идее должна обрабатывать собыите перехлода на следующий квант времени
 };
 
 #endif // ELEMENTS_H

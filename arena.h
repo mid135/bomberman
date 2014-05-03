@@ -10,9 +10,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
-using namespace std;
+#include <QObject>
 
-class Arena {
+#include <elements.h>
+class Arena : public QObject {
+Q_OBJECT
 public:
     Arena(size_t,size_t);//
     bool setElement(size_t,size_t,size_t);//принимает координаты и тип статического элемента.
@@ -20,9 +22,10 @@ public:
 private:
     size_t hight;
     size_t width;
-    vector<Element> player;
-    vector<Element> bomb;
-    vector<Element> bonus;
+    std::vector<Player> player;
+    //std::vector<Bomb> bomb;
+    //std::vector<Bonus> bonus;
+    //std::vector<Explosion> explosion;
     int* staticElementArray;//массив из статических элементов
 
 };
