@@ -1,12 +1,12 @@
-#ifndef ELEMENTS_CPP
-#define ELEMENTS_CPP
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
 #include "elements.h"
 
-Player::Player() {
+
+
+void Player::purge() {
 
 }
 
@@ -18,14 +18,55 @@ void Player::draw(size_t param) {
 
 }
 
-bool Player::move(size_t c, size_t dir) {
-
+bool Player::move(size_t a, size_t b) {
     return true;
 }
 
-void Player::purge() {
 
+void Bomb::purge() {
 
 }
 
-#endif
+void Bomb::timer() {
+
+}
+
+void Bomb::draw(size_t param) {
+
+}
+
+bool Bomb::move(size_t a, size_t b) {
+    return true;
+}
+
+void Explosion::purge() {
+
+}
+
+void Explosion::timer() {
+
+}
+
+void Explosion::draw(size_t param) {
+
+}
+
+bool Explosion::move(size_t a, size_t b) {
+    return true;
+}
+
+void Bonus::purge() {
+
+}
+
+void Bonus::timer() {
+
+}
+
+void Bonus::draw(size_t param) {
+
+}
+
+bool Bonus::move(size_t a, size_t b) {
+    return true;
+}

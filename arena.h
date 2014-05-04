@@ -23,9 +23,9 @@ private:
     size_t hight;
     size_t width;
     std::vector<Player> player;
-    //std::vector<Bomb> bomb;
-    //std::vector<Bonus> bonus;
-    //std::vector<Explosion> explosion;
+    std::vector<Bomb> bomb;
+    std::vector<Bonus> bonus;
+    std::vector<Explosion> explosion;
     int* staticElementArray;//массив из статических элементов
 
 };
