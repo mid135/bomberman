@@ -8,20 +8,8 @@ QT       += core gui
 QT       += opengl
 INCLUDEPATH += -L/usr/lib/
 INCLUDEPATH += -L/usr/lib64/
-INCLUDEPATH += -L/usr/include/GL
-         LIBS += -lglut
+LIBS += -lsfml-graphics -lsfml-window -lsfml-system
 
-
-QMAKE_CXXFLAGS +=-o
-QMAKE_CXXFLAGS +=opengl1
-QMAKE_CXXFLAGS +=-lGL
-QMAKE_CXXFLAGS +=-lstdc++
-QMAKE_CXXFLAGS +=-lc
-QMAKE_CXXFLAGS +=-lm
-QMAKE_CXXFLAGS +=-lglut
-QMAKE_CXXFLAGS +=-lGLU
-QMAKE_CXXFLAGS +=-lglut
-QMAKE_CXXFLAGS +=-lGLEW
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
