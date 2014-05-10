@@ -19,7 +19,8 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    elements.cpp
+    elements.cpp \
+    arena.cpp
 
 HEADERS  += mainwindow.h \
     arena.h \

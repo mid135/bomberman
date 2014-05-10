@@ -10,23 +10,31 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
-#include <QObject>
+
 
 #include <elements.h>
-class Arena : public QObject {
-Q_OBJECT
+#include <coordinator.h>
+#include <SFML/Graphics.hpp>
+
+class Arena{
+
 public:
-    Arena(size_t,size_t);//
+    Arena(size_t,size_t,sf::RenderWindow*);//
     bool setElement(size_t,size_t,size_t);//принимает координаты и тип статического элемента.
     void draw();//функция перерисовыает все
+    void timer();//функция призвана вызывать timer в всех подчиненных ей объектов. там провождится проверка нажатий на клавиши в том числе.
+    //Coordinator coordinator;
+
+    //add methods to create dynamic objects?
 private:
-    size_t hight;
-    size_t width;
+    sf::RenderWindow* win;
+    size_t hight;//in BLOCKS??
+    size_t width;//in BLOCKS??
     std::vector<Player> player;
-    std::vector<Bomb> bomb;
-    std::vector<Bonus> bonus;
-    std::vector<Explosion> explosion;
-    int* staticElementArray;//массив из статических элементов
+    //std::vector<Bomb> bomb;
+    //std::vector<Bonus> bonus;
+    //std::vector<Explosion> explosion;
+    sf::RectangleShape* staticElementArray;//массив из статических элементов
 
 };
 

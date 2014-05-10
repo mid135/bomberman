@@ -14,11 +14,13 @@
 #include "elements.h"
 #include "arena.h"
 
+
 class Coordinator {
+
 public:
     Coordinator();
     void timer();//эта функция генерирует переход на следующий квант времени
-    bool checkCollision(Element&,Arena&);//эта штука доллжна заниматься проверкой столкновений
+    bool checkCollision(Element&);//эта штука доллжна заниматься проверкой столкновений
 private:
 
 };
