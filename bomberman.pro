@@ -9,7 +9,7 @@ QT       += opengl
 INCLUDEPATH += -L/usr/lib/
 INCLUDEPATH += -L/usr/lib64/
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system
-
+QMAKE_CXXFLAGS += -std=c++0x
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

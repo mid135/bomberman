@@ -10,19 +10,16 @@
 //#include <elements.cpp>
 using namespace std;
 
-class action_interface {
-public:
-    virtual void draw(size_t) = 0;
-    virtual bool move(size_t,size_t) = 0;//принимает на сколько он должен сдвинуться и куда
-    virtual void purge() = 0;//эта функция должна удалить рисовку объекта
-    virtual void timer() = 0;
-};
+
 
 class Element {
 
 public:
     Element(sf::RenderWindow* win_);
-
+    virtual void draw(size_t) = 0;
+    virtual bool move(size_t,size_t) = 0;//принимает на сколько он должен сдвинуться и куда
+    virtual void purge() = 0;//эта функция должна удалить рисовку объекта
+    virtual void timer() = 0;
     size_t get_x() {return x;}
     size_t get_y() {return y;}
     size_t get_hight() {return hight;}
@@ -95,16 +92,16 @@ private:
 
 };*/
 
-class Player:public Element,public action_interface {
+class Player:public Element {
 
 public:
     Player(sf::RenderWindow* win_, string, size_t x_, size_t);
     sf::RectangleShape *image;
     string name;
-    virtual void draw(size_t);
-    virtual bool move(size_t a, size_t b);
-    virtual void purge();
-    virtual void timer();
+    void draw(size_t);
+    bool move(size_t a, size_t b);
+    void purge();
+    void timer();
 
 
 };

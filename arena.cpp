@@ -12,8 +12,10 @@ Arena::Arena(size_t a, size_t b,sf::RenderWindow* win) {
     this->width = b;
     this->win = win;
     sf::Color c;
-    Player* p = new Player(win,"dima",50,50);
-    this->player.push_back(*p);
+    //Player* p = new Player(win,"dima",50,50);
+    shared_ptr<Element> p = shared_ptr<Element>(new Player(win,"dima",50,50));
+    this->dynObject.push_back(p);
+    this->dynObject[0];
     this->staticElementArray = new sf::RectangleShape[100];
     for (size_t i = 0; i < 100; ++i) {
         if (i % 7 == 0) {
@@ -39,8 +41,8 @@ void Arena::draw() {
 
     //draw dynamics
 
-    for (size_t i = 0; i < this->player.size(); ++i) {
-        this->player[i].draw(0);
+    for (size_t i = 0; i < this->dynObject.size(); ++i) {
+        this->dynObject[i]->draw(0);
     }
 
     //finaly display
@@ -49,7 +51,7 @@ void Arena::draw() {
 }
 
 void Arena::timer() {
-    for (size_t i = 0; i < this->player.size(); ++i) {
-        this->player[i].timer();
+    for (size_t i = 0; i < this->dynObject.size(); ++i) {
+        this->dynObject[i]->timer();
     }
 }

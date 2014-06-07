@@ -19,8 +19,10 @@ class Coordinator {
 
 public:
     Coordinator();
-    void timer();//эта функция генерирует переход на следующий квант времени
-    bool checkCollision(Element&);//эта штука доллжна заниматься проверкой столкновений
+    void timer(){//эта функция генерирует переход на следующий квант времени
+    //bool checkCollision(shared_ptr<Element> currentEl,Arena* arena){//эта штука доллжна заниматься проверкой столкновений
+
+    }
 private:
 
 };

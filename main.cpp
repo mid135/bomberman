@@ -15,25 +15,20 @@ int main()
     int i = 0;
     while (window.isOpen())
     {
-    sf::Event event;
-    while (window.pollEvent(event) ||
-           (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
-    {
-        if (event.type == sf::Event::Closed)
-        window.close();
-    }
+        sf::Event event;
+        while (window.pollEvent(event) || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)){
+            if (event.type == sf::Event::Closed)
+            window.close();
+        }
     ar->timer();
-
     ar->draw();
 
-   // window.clear();
+    // window.clear();
     //window.draw(shape);
     //window.display();
     }
 
     return 0;
-
-
     /*QApplication a(argc, argv);
     MainWindow win;
     win.show();

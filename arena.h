@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>
-
+#include <memory>
 
 #include <elements.h>
 #include <coordinator.h>
@@ -27,10 +27,11 @@ public:
 
     //add methods to create dynamic objects?
 private:
+
     sf::RenderWindow* win;
     size_t hight;//in BLOCKS??
     size_t width;//in BLOCKS??
-    std::vector<Player> player;
+    std::vector<std::shared_ptr<Element>> dynObject;
     //std::vector<Bomb> bomb;
     //std::vector<Bonus> bonus;
     //std::vector<Explosion> explosion;
